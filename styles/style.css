@@ -36,3 +36,9 @@ body {
     box-sizing: border-box;
     font-size: 16px;
 }
+
+/* Foco nos campos de entrada */
+.input-field:focus {
+    border-color: #e9f035;
+    outline: none;
+}
