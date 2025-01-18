@@ -64,7 +64,7 @@ body {
 
 /* Estilos da modal */
 .modal {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 5;
     left: 0;
@@ -73,4 +73,18 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos do conteúdo da modal */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
 }
