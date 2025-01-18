@@ -22,7 +22,7 @@ form.addEventListener('submit', (event) => {
     // Validação do campo de e-mail
     if (!isValidEmail(emailInput.value)) {
         valid = false;
-        errorMessage += 'Por favor, insira um e-mail válido\n';
+        errorMessage += 'Por favor, insira um e-mail válido (Ex.: usuario@dominio.com)\n';
     }
 
     // Validação do campo de senha
@@ -34,6 +34,9 @@ form.addEventListener('submit', (event) => {
     // Impedir o envio do formulário se houver erros
     if (!valid) {
         event.preventDefault();
-        alert(errorMessage);
+        passwordInput.value = '';
+        setTimeout(() => {
+            alert(errorMessage);
+        }, 10);
     }
 });
