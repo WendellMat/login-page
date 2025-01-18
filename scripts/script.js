@@ -40,18 +40,28 @@ form.addEventListener('submit', (event) => {
         setTimeout(() => {
             modalMessage.textContent = errorMessage;
             modal.style.display = "block";
-        }, 100)
+        }, 100);
         setTimeout(() => {
             passwordInput.value = '';
         }, 200);
     
     // Se não houver erros, mostrar a modal com mensagem de sucesso
     } else {
+        event.preventDefault();
         setTimeout(() => {
             modalMessage.textContent = "Login com sucesso";
             modal.style.display = "block";
-        })
+        }, 100);
+        setTimeout(() => {
+            emailInput.value = ''
+            passwordInput.value = '';
+        }, 200);
     }
+
+    // Fechar a modal após 3 segundos que a mensagem seja exibida
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 3200)
 });
 
 // Fechar a modal

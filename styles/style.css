@@ -64,7 +64,7 @@ body {
 
 /* Estilos da modal */
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     z-index: 5;
     left: 0;
