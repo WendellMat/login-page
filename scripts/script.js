@@ -34,12 +34,22 @@ form.addEventListener('submit', (event) => {
         errorMessage += 'A senha deve ter pelo menos 6 caracteres\n';
     }
 
-    // Impedir o envio do formulário se houver erros
+    // Impedir o envio do formulário se houver erros e mostrar uma mensagem de erro
     if (!valid) {
         event.preventDefault();
-        passwordInput.value = '';
         setTimeout(() => {
-            alert(errorMessage);
-        }, 10);
+            modalMessage.textContent = errorMessage;
+            modal.style.display = "block";
+        }, 100)
+        setTimeout(() => {
+            passwordInput.value = '';
+        }, 200);
+    
+    // Se não houver erros, mostrar a modal com mensagem de sucesso
+    } else {
+        setTimeout(() => {
+            modalMessage.textContent = "Login com sucesso";
+            modal.style.display = "block";
+        })
     }
 });
