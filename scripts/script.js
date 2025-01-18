@@ -2,6 +2,9 @@
 const form = document.querySelector('form');
 const emailInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
+const modal = document.getElementById('modal');
+const modalMessage = document.getElementById('modal-message');
+const colseModal = document.getElementById('close-btn');
 
 // Função para validar e-mail
 function isValidEmail(email) {
