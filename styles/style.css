@@ -106,3 +106,7 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+video {
+    height: 150px;
+}
