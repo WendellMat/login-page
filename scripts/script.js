@@ -4,7 +4,7 @@ const emailInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const modal = document.getElementById('modal');
 const modalMessage = document.getElementById('modal-message');
-const colseModal = document.getElementById('close-btn');
+const closeModal = document.getElementById('close-btn');
 
 // Função para validar e-mail
 function isValidEmail(email) {
@@ -53,3 +53,15 @@ form.addEventListener('submit', (event) => {
         })
     }
 });
+
+// Fechar a modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+// Fechar a modal se clicar fora dela
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+})
