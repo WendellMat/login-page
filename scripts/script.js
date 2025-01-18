@@ -13,3 +13,27 @@ function isValidEmail(email) {
 function isValidPassword(password) {
     return password.length >= 6;
 }
+
+// Adicionar evento de submissão ao formulário
+form.addEventListener('submit', (event) => {
+    let valid = true;
+    let errorMessage = '';
+
+    // Validação do campo de e-mail
+    if (!isValidEmail(emailInput.value)) {
+        valid = false;
+        errorMessage += 'Por favor, insira um e-mail válido\n';
+    }
+
+    // Validação do campo de senha
+    if (!isValidPassword(passwordInput.value)) {
+        valid = false;
+        errorMessage += 'A senha deve ter pelo menos 6 caracteres\n';
+    }
+
+    // Impedir o envio do formulário se houver erros
+    if (!valid) {
+        event.preventDefault();
+        alert(errorMessage);
+    }
+});
