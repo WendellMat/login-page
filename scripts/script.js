@@ -5,6 +5,8 @@ const passwordInput = document.getElementById('password');
 const modal = document.getElementById('modal');
 const modalMessage = document.getElementById('modal-message');
 const closeModal = document.getElementById('close-btn');
+const successVideo = document.getElementById('success-video');
+const errorVideo = document.getElementById('error-video');
 
 // Função para validar e-mail
 function isValidEmail(email) {
@@ -25,21 +27,22 @@ form.addEventListener('submit', (event) => {
     // Validação do campo de e-mail
     if (!isValidEmail(emailInput.value)) {
         valid = false;
-        errorMessage += 'Por favor, insira um e-mail válido (Ex.: usuario@dominio.com)\n';
+        errorMessage += 'Por favor, insira um e-mail válido (Ex.: usuario@dominio.com)<br>';
     }
 
     // Validação do campo de senha
     if (!isValidPassword(passwordInput.value)) {
         valid = false;
-        errorMessage += 'A senha deve ter pelo menos 6 caracteres\n';
+        errorMessage += 'A senha deve ter pelo menos 6 caracteres';
     }
 
     // Impedir o envio do formulário se houver erros e mostrar uma mensagem de erro
     if (!valid) {
         event.preventDefault();
         setTimeout(() => {
-            modalMessage.textContent = errorMessage;
+            modalMessage.innerHTML = errorMessage;
             modal.style.display = "block";
+            successVideo.style.display = "none";
         }, 100);
         setTimeout(() => {
             passwordInput.value = '';
@@ -49,8 +52,9 @@ form.addEventListener('submit', (event) => {
     } else {
         event.preventDefault();
         setTimeout(() => {
-            modalMessage.textContent = "Login com sucesso";
+            modalMessage.innerHTML = "Login com sucesso";
             modal.style.display = "block";
+            errorVideo.style.display = "none";
         }, 100);
         setTimeout(() => {
             emailInput.value = ''
